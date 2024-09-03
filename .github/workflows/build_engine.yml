@@ -47,7 +47,7 @@ jobs:
       upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
       - name: Download Artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4.1.7
         with:
           name: dist
       - name: Generate Matrix
@@ -78,7 +78,7 @@ jobs:
       matrix: ${{fromJson(needs.finddeploy.outputs.matrix)}}
     steps:
     - name: Download Artifacts
-      uses: actions/download-artifact@v1
+      uses: actions/download-artifact@v4.1.7
       with:
         name: dist
     - name: Upload Release Asset
